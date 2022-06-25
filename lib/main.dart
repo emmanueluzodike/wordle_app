@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wordle_app/game_mode_menu.dart';
-
 import 'daily_wordle.dart';
 import 'multiplayer_wordle.dart';
 import 'practice_wordle.dart';
@@ -14,16 +12,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'WORDLE',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: MyAppPage());
+        home: const MyAppPage());
   }
 }
 
 class MyAppPage extends StatefulWidget {
-  MyAppPage({Key? key}) : super(key: key);
+  const MyAppPage({Key? key}) : super(key: key);
 
   @override
   State<MyAppPage> createState() => _MyAppPageState();
