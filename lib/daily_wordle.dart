@@ -13,30 +13,56 @@ class _DailyWordleState extends State<DailyWordle> {
     return Scaffold(
       body: Column(
         children: [
-          Expanded(
-            flex: 7,
-            child: Container(
-              color: Colors.yellow,
-              child: GridView.builder(
-                  itemCount: 30,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    mainAxisSpacing: 3,
-                    crossAxisSpacing: 3,
-                    crossAxisCount: 5,
-                  ),
-                  itemBuilder: (context, index) {
-                    return Container(
-                      color: Colors.red,
-                    );
-                  }),
-            ),
+          Row(
+            children: [
+              //this container is for the guess grid
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                //alignment: Alignment.bottomLeft,
+                color: Colors.yellow,
+                width: 250,
+                height: 400,
+                child: GridView.builder(
+                    itemCount: 40,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 5,
+                      mainAxisSpacing: 5.7,
+                      crossAxisSpacing: 4,
+                    ),
+                    itemBuilder: (context, index) {
+                      return Container(color: Colors.blue);
+                    }),
+              ),
+
+              //this container is for the number grid
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                //alignment: Alignment.bottomLeft,
+                color: Colors.red,
+                width: 161,
+                height: 400,
+
+                child: GridView.builder(
+                    itemCount: 24,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      mainAxisSpacing: 2,
+                      crossAxisSpacing: 2,
+                    ),
+                    itemBuilder: (context, index) {
+                      return Container(color: Colors.black);
+                    }),
+              ),
+            ],
           ),
+          //keyboard
           Expanded(
-            flex: 4,
             child: Container(
               color: Colors.green,
             ),
-          ),
+          )
         ],
       ),
     );
